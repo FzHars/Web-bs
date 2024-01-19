@@ -216,7 +216,7 @@
                 <label for="name" class="form-label">Name</label>
                 <input
                   type="name"
-                  class="form-control"
+                  class="form-control nama-text"
                   id="name"
                   aria-describedby="name"
                   name="nama"
@@ -226,7 +226,7 @@
                 <label for="email" class="form-label">Email </label>
                 <input
                   type="email"
-                  class="form-control"
+                  class="form-control email-text"
                   id="email"
                   aria-describedby="email"
                   name="email"
@@ -235,7 +235,7 @@
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
                 <textarea
-                  class="form-control"
+                  class="form-control pesan-text"
                   id="pesan"
                   rows="3"
                   name="pesan"
@@ -297,18 +297,39 @@
       const btnKirim = document.querySelector(".btn-kirim");
       const btnLoading = document.querySelector(".btn-loading");
       const myAlert = document.querySelector(".my-alert");
+      const namatxt = document.getElementById("name").value;
+      const emailtxt = document.getElementById("email").value;
+      const pesantxt = document.getElementById("pesan").value;
 
+      function cek() {
+        if (form.name.value != "" && form.email.value != "" && form.pesan.value != ""){
+          return true;
+        } else {
+          alert('Data ada yang kosong');
+        }
+        // if (name === "") {
+        //   alert("Nama Kosong. Harap diisi !!!!");
+        //   return true;
+        // } else if (email === "") {
+        //   return true;
+        //   alert("Harap isi email !!!!");
+        // } else if (pesan == "") {
+        //   return true;
+        //   alert("Isi pesan anda 😁");
+        // } 
+      }
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         // Ketika button submit diklik
         // Tampilkan button loading lalu hilangkan button submit
         btnLoading.classList.toggle("d-none");
+        cek();
         btnKirim.classList.toggle("d-none");
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // Tampilkan button submit lalu hilangkan button loading
-            btnLoading.classList.toggle("d-none");
-            btnKirim.classList.toggle("d-none");
+        .then((response) => {
+          // Tampilkan button submit lalu hilangkan button loading
+          btnLoading.classList.toggle("d-none");
+          btnKirim.classList.toggle("d-none");
             // Tampilkan Alert
             myAlert.classList.toggle("d-none");
             // reset ketika sudah submit
