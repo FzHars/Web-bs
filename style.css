@@ -11,3 +11,12 @@ section {
   /* padding-top: 6rem; */
   scroll-margin-top: 80px;
 }
+
+.gallery-img {
+  width: 100%;
+}
+
+#gallery .row > * {
+  padding: 0;
+  justify-content: center;
+}
