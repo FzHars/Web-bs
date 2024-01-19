@@ -201,9 +201,9 @@
             <div
               class="alert alert-warning alert-dismissible fade show d-none my-alert"
               role="alert"
-              style="border-color: rgb(138, 43, 226, .3);"
+              style="border-color: rgb(138, 43, 226, 0.3)"
             >
-              <strong>Terimakasih😉</strong> Pesan anda sudah diterima.
+              <strong>Terimakasih😉</strong> <br />Pesan anda sudah diterima.
               <button
                 type="button"
                 class="btn-close"
@@ -310,7 +310,7 @@
             btnLoading.classList.toggle("d-none");
             btnKirim.classList.toggle("d-none");
             // Tampilkan Alert
-            myAlert.classList.toggle('d-none');
+            myAlert.classList.toggle("d-none");
             // reset ketika sudah submit
             form.reset();
             console.log("Success!", response);
