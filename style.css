@@ -4,7 +4,7 @@
 #projects,
 .jumbotron,
 .alert {
-  background-color: #d6bdee;
+  background-color: #d6bdee !important;
 }
 
 section {
